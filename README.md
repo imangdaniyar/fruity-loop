@@ -8,7 +8,7 @@ Storages:
 UserStorage, ProductsStorage, CartStorage
 </p>
 <p>
-Realtions:
+Relations:
 <br>
 User to Cart - One to One
 <br>

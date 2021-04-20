@@ -5,7 +5,7 @@ Routing Home, Profile, Store, Cart
 <p>
 Storages:
 <br>
-<UserStorage, ProductsStorage, CartStorage>
+UserStorage, ProductsStorage, CartStorage
 </p>
 <p>
 Realtions:

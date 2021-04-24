@@ -11,7 +11,6 @@ import {CartService} from "./services/cart.service";
 import {CartPopupComponent} from "./pages/cart/cart-popup/cart-popup.component";
 import {ProductService} from "./services/products.service";
 import { RegistrationComponent } from './pages/registration/registration.component';
-
 @NgModule({
     declarations: [
         AppComponent,

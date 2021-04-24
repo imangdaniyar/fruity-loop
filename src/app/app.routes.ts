@@ -1,4 +1,6 @@
 import {RegistrationComponent} from './pages/registration/registration.component';
+import {LoginComponent} from "./pages/login/login.component";
+import {CartPageComponent} from "./pages/cart/cart-page.component";
 export const appRoutes=[
     {
         path:'',
@@ -15,11 +17,14 @@ export const appRoutes=[
     },
     {
         path:'cart',
-        loadChildren:'./pages/cart/cart-page.module#CartPageModule'
+        loadChildren:'./pages/cart/cart-page.module#CartPageModule',
+        //component: CartPageComponent
+
     },
     {
         path : 'login',
-        loadChildren : './pages/login/login.module#LoginModule'
+        loadChildren : './pages/login/login.module#LoginModule',
+        //component: LoginComponent
     },
     {
         path : 'registration',

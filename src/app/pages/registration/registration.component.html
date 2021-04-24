@@ -5,21 +5,26 @@
         <form action="" id="loginForm">
           <div class="form-group input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input class="form-control" type="text" name='username' placeholder="username"/>
+            <input class="form-control" type="text" name='username' placeholder="username" [(ngModel)]="username"/>
           </div>
           <div class="form-group input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input class="form-control" type="text" name='email' placeholder="Email"/>
+            <input class="form-control" type="text" name='email' placeholder="Email" [(ngModel)]="email"/>
           </div>
           <div class="form-group input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            <input class="form-control" type="password" name='password' placeholder="password"/> 
+            <input class="form-control" type="password" name='password' placeholder="password" [(ngModel)]="password"/>
           </div>
           <div class="form-group">
-            <button type="button" class="btn btn-def btn-block">Sign Up</button>
+            <button type="button" class="btn btn-def btn-block" (click)="addUser()">Sign Up</button>
           </div>
-        </form>        
-      </div>  
-    </div>    
+        </form>
+        <div><h3>Users</h3>
+          <ul *ngFor="let u of users">
+            <li>Name:{{u.username}} Email:{{u.email}} Password:{{u.password}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

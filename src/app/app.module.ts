@@ -10,7 +10,9 @@ import {TopbarComponent} from "./components/topbar/topbar.component";
 import {CartService} from "./services/cart.service";
 import {CartPopupComponent} from "./pages/cart/cart-popup/cart-popup.component";
 import {ProductService} from "./services/products.service";
-import { RegistrationComponent } from './pages/registration/registration.component';
+import {RegistrationComponent} from './pages/registration/registration.component';
+import {CartPageComponent} from "./pages/cart/cart-page.component";
+import {LoginComponent} from "./pages/login/login.component";
 @NgModule({
     declarations: [
         AppComponent,

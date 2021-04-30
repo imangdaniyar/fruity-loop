@@ -1,7 +1,9 @@
 from django.db import models
 
-
 # Create your models here.
+from rest_framework import serializers
+from rest_framework.renderers import JSONRenderer
+
 
 class User(models.Model):
     name = models.CharField(max_length=300)
@@ -9,6 +11,14 @@ class User(models.Model):
     email = models.CharField(max_length=300)
     password = models.CharField(max_length=300)
     address = models.CharField(max_length=300, default='None')
+
+    """def __init__(self, id, name, surname, email, password, address):
+        self.id = id
+        self.name = name
+        self.surname = surname
+        self.email = email
+        self.password = password
+        self.address = address"""
 
     def to_json(self):
         return {
@@ -23,28 +33,26 @@ class User(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=300)
-    category = models.CharField(max_length=30, default='None')
+    #category = models.CharField(max_length=30, default='None')
     description = models.TextField()
-    code = models.CharField(max_length=10)
+    #code = models.CharField(max_length=10)
     price = models.FloatField(default=0)
     quantity = models.IntegerField(default=0)
-    rating = models.FloatField(default=0)
+    #rating = models.FloatField(default=0)
 
     def to_json(self):
         return {
             'id': self.id,
             'name': self.name,
             'description': self.description,
-            'code': self.code,
             'price': self.price,
             'quantity': self.quantity,
-            'rating': self.rating,
         }
 
 
 class Order(models.Model):
-    productId = models.ForeignKey(Product, on_delete=models.CASCADE(), null=True)
-    userId = models.ForeignKey(User, on_delete=models.CASCADE(), null=True)
+    productId = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
+    userId = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     quantity = models.IntegerField(default=0)
     totalPrice = models.FloatField(default=0)
     delivery = models.BooleanField(default=False)
@@ -63,9 +71,9 @@ class Order(models.Model):
         }
 
 
-class Storage(models.Model):
+"""class Storage(models.Model):
     name = models.CharField(max_length=100)
-    productId = models.ForeignKey(Product, on_delete=models.CASCADE(), null=True)
+    productId = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
     quantity = models.IntegerField()
     address = models.CharField(max_length=100)
 
@@ -77,3 +85,19 @@ class Storage(models.Model):
             'quantity': self.quantity,
             'address': self.address,
         }
+"""
+
+
+class Storage:
+    def __init__(self, name, productId, quantity=0, address="None"):
+        self.name = name
+        self.productId = productId
+        self.quantity = quantity
+        self.address = address
+
+    def to_json(self):
+        print(JSONRenderer().render(StorageSearializer(self)))
+        return JSONRenderer().render(StorageSearializer(self))
+
+
+

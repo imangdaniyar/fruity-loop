@@ -138,12 +138,7 @@ def product(request, id):
         return JsonResponse({'message': 'deleted'}, status=204)
 
 
-@api_view(['GET', 'POST'])
-def storages(request):
-    if request.method == 'POST':
-        data = JSONParser().parse(request)
-        print(data)
-        return data
+
 
 
 class UserDetailAPIView(APIView):
@@ -187,7 +182,7 @@ class UserListAPIView(APIView):
         return JsonResponse(user.to_json(), status=200)
 
 
-@api_view(['GET', 'POST'])
+"""api_view(['GET', 'POST'])
 def product_list(request):
     if request.method == 'GET':
         products = Product.objects.filter(name__contains='a').order_by('id')
@@ -201,7 +196,7 @@ def product_list(request):
             return Response(serializer.data)
         return Response(serializer.errors)
 
-
+"""
 
 class ProductDetailAPIView(APIView):
     def get_object(self, pk):

@@ -5,6 +5,7 @@ from rest_framework import serializers
 from rest_framework.renderers import JSONRenderer
 
 
+
 class User(models.Model):
     name = models.CharField(max_length=300)
     surname = models.CharField(max_length=300)
@@ -33,20 +34,23 @@ class User(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=300)
-    #category = models.CharField(max_length=30, default='None')
+    category = models.CharField(max_length=30, default='None')
     description = models.TextField()
-    #code = models.CharField(max_length=10)
+    code = models.CharField(max_length=10,default='None')
     price = models.FloatField(default=0)
     quantity = models.IntegerField(default=0)
-    #rating = models.FloatField(default=0)
+    rating = models.FloatField(default=0)
 
     def to_json(self):
         return {
             'id': self.id,
             'name': self.name,
+            'category': self.category,
             'description': self.description,
+            'code': self.code,
             'price': self.price,
             'quantity': self.quantity,
+            'rating': self.rating
         }
 
 
@@ -71,7 +75,7 @@ class Order(models.Model):
         }
 
 
-"""class Storage(models.Model):
+class Storage(models.Model):
     name = models.CharField(max_length=100)
     productId = models.ForeignKey(Product, on_delete=models.CASCADE, null=True)
     quantity = models.IntegerField()
@@ -85,10 +89,10 @@ class Order(models.Model):
             'quantity': self.quantity,
             'address': self.address,
         }
-"""
 
 
-class Storage:
+
+"""class Storage:
     def __init__(self, name, productId, quantity=0, address="None"):
         self.name = name
         self.productId = productId
@@ -101,3 +105,4 @@ class Storage:
 
 
 
+"""

@@ -1,0 +1,20 @@
+<div class="userMain" *ngIf="user" >
+
+  <div class="profile">
+    <div class="userInfo">
+      <div class="nameandID">
+        <h2>{{user.name}}</h2>
+        <p class="userDesc" *ngIf="user.surname">{{user.surname}}</p>
+        <p class="userEmail" *ngIf="user.email">{{user.email}}</p>
+        <p class="userEmail" *ngIf="user.address">{{user.address}}</p>
+      </div>
+    </div>
+    <div class="sublinks"  >
+      <a routerLink="/{{user.id}}">Main</a>
+      <a routerLink="/{{user.id}}/settings">Settings</a>
+    </div>
+  </div>
+  <div class="subcontent">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="settingContainer">
+    <div class="setting-form">
+        <label for="user.name">Username:</label>
+        <input type="text" [(ngModel)]="user.name">
+    </div>
+    <div class="setting-form">
+        <label for="user.password">Password:</label>
+        <input type="text" [(ngModel)]="user.password">
+    </div>
+    <div class="setting-form">
+        <label for="user.surname">Surname:</label>
+        <input type="text" [(ngModel)]="user.surname">
+    </div>
+    <div class="setting-form">
+        <label for="user.email">Email:</label>
+        <input type="text" [(ngModel)]="user.email">
+    </div>
+    <div class="setting-form">
+        <label for="user.address">Address:</label>
+        <input type="text" [(ngModel)]="user.address">
+    </div>
+    
+
+    <button class="save" (click)="save()">Save</button>
+</div>

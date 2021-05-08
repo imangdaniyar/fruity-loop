@@ -1,0 +1,24 @@
+<div *ngIf="product" class="product-page">
+    <div class="product-page-container">
+        <ol class="product-breadcrumbs">
+            <li class="breadcrumb-item"><a routerLink="/">Fruits</a></li>
+            <li class="breadcrumb-item"> {{product['name']}}</li>
+        </ol>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="product-details-image" [ngStyle]="{'background-image': 'url(' + product.photo + ')'}"></div>
+            </div>
+            <div class="col-md-4">
+                <div class="product-details-row">
+                    <h1 class="product-title">{{product['name']}}</h1>
+                    <div class="product-price">{{product['price'] | currency :'USD':true }}</div>
+                    <div class="product-description">{{product['description']}}</div>
+                    <div class="product-description">Category: {{product['category']}}</div>
+                    <div class="product-description">Quantity: {{product['quantity']}}</div>
+                    <div class="product-description">Code: {{product['code']}}</div>
+                    <div class="product-description">Rating: {{product['rating']}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

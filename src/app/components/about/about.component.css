@@ -1,0 +1,61 @@
+.about_page {
+    height: 91vh;
+    width: 100%;
+    background: url(https://images.wallpaperscraft.ru/image/listia_rastenie_temnyj_129098_3840x2400.jpg) no-repeat;
+    background-size: cover;
+    font-family: sans-serif;
+}
+
+.main {
+    width: 35%;
+    background: rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    text-align: center;
+    padding: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 16px;
+}
+
+.about_image {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+.main h1 {
+    font-size: 40px;
+    letter-spacing: 3px;
+    font-weight: 400;
+}
+
+.main h5 {
+    font-size: 25px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.main p {
+    text-align: justify;
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.github{
+    width: 30px;
+    height: 30px;
+}
+
+.instagram {
+    margin-left: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+
+
+
+
+
